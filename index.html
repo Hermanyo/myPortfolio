@@ -1,0 +1,184 @@
+<html class="gr__">
+
+<head>
+    <title> Hermanyo H. - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <header class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="main-menu mobile-menu">
+                        <ul>
+                            <li class="active"><span id="homeButton">Home</span></li>
+                            <li><span id="aboutmeButton">About Me</span></li>
+                            <li><span id="contactButton">Contact</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="hero-section set-bg"
+        style="background: rgb(25, 25, 25) url(&quot;img/codeWallpaper.jpg&quot;) repeat scroll 0% 0%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="hs-text">
+                        <span>Developer</span>
+                        <h2>Hermanyo H.</h2>
+                        <p>
+                            “Talk is cheap. Show me the code.”
+
+                            ― Linus Torvalds
+                        </p>
+                        <a id="readmoreButton" class="primary-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-us-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="as-pic">
+                        <img alt="" src="img/myProfilePhoto.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="as-text">
+                        <div class="section-title">
+
+                            <h2>About Me</h2>
+                        </div>
+                        <p class="f-para">I am a student of Computer Science at UFS, I am crazy about technology and I
+                            develop
+                            new projects in different languages ​​and technologies. I currently work in a part-time job
+                            where I develop different projects on demand.</p>
+
+                        <a class="primary-btn" href="./contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+
+                        <h2>Skills</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>
+                        CSS/HTML
+                    </p>
+                    <p>
+                        React/React-Native</p>
+                    <p>
+                        C/C++
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <p>JavaScript</p>
+                    <p>
+                        Git/GitHub</p>
+                    <p>
+                        Java/C#
+                    </p>
+                </div> 
+                <div class="col-lg-4">
+                    <p>English: Intermediate</p>
+                    <p>Portuguese: Native</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+
+                        <h2>My personal projects</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <a class="col-lg-4 col-md-6"
+                    href="https://addons.mozilla.org/pt-BR/firefox/addon/queue-and-lyrics-for-youtube/" target="_blank">
+                    <div class="service-item">
+                        <img alt="" src="img/addonLyricsForYoutube.jpg">
+                        <h4>Lyrics for Youtube</h4>
+                        <p>A extension to show videos lyrics for YouTube. Plataforms: Mozilla
+                            Firefox (Published on AddOns Mozilla ), Chrome/Chromium, Opera, Internet Edge.
+                        </p>
+                    </div>
+                </a>
+                <a class="col-lg-4 col-md-6" target="_blank" href="https://www.apkfiles.com/apk-593214/guiaufs">
+                    <div class="service-item">
+                        <img alt="" src="img/guiaufsAbout.jpg" height="120px">
+                        <h4>GuiaUFS</h4>
+                        <p>An application to help students/visitors to locating at the Federal University of Sergipe -
+                            UFS, Brazil.
+                        </p>
+                    </div>
+                </a>
+                <a class="col-lg-4 col-md-6" target="_blank" href="https://github.com/Hermanyo/Chat-API">
+                    <div class="service-item">
+                        <img alt="" src="img/api.png">
+                        <h4>ChatApi</h4>
+                        <p>A simple chatApi using Cloud Firestore, Express with Nodejs</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div role="navigation" id="topTopButton" class="button-to-Top" style="display: block;">
+        <a data-title="goToTop" href="javascript:void(0)">
+            <i class="material-icons md-light pmd-sm fa fa-chevron-up"></i>
+        </a>
+    </div> 
+    <script>
+        window.onscroll = () => {
+            if (window.scrollY >= 739)
+                document.querySelector("#topTopButton").style.display = "block";
+            else
+                document.querySelector("#topTopButton").style.display = "none";
+        }
+        document.querySelector("#topTopButton").addEventListener("click", event => {
+            document.querySelector("html").scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+        document.querySelector("#homeButton").addEventListener("click", event => {
+            document.querySelector("html").scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+        document.querySelector("#aboutmeButton").addEventListener("click", event => {
+            document.querySelector(".about-us-section").scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+        document.querySelector("#readmoreButton").addEventListener("click", event => {
+            document.querySelector(".about-us-section").scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+        document.querySelector("#contactButton").addEventListener("click", event => {
+            window.open("./contact.html", "_parent");
+        })
+    </script>
+</body>
+</html>
