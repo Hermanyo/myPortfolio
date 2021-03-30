@@ -938,6 +938,12 @@ button.bg-light:hover {
 .px-5 {
  padding-left:3rem!important
 }
+.textColorBox { 
+  background: rgb(109, 37, 143);  
+  white-space: nowrap; 
+  font-size:1.3em;  
+  max-width: 10
+}
 @media (min-width:576px) {
  .my-sm-0 {
   margin-top:0!important
