@@ -1118,11 +1118,18 @@
             }
             
             /* Projects Mobile */
-            .project-card {
+            #projects .col-lg-4,
+            #projects .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 15px;
                 margin-bottom: 20px;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
+            }
+            
+            .project-card {
+                margin: 0 auto;
+                max-width: 100%;
+                width: 100%;
             }
             
             .project-card img {
@@ -1130,16 +1137,6 @@
                 height: auto;
                 max-height: 200px;
                 object-fit: cover;
-            }
-            
-            #projects .row {
-                justify-content: center;
-            }
-            
-            #projects .col-lg-4,
-            #projects .col-md-6 {
-                display: flex;
-                justify-content: center;
             }
             
             .project-content {
