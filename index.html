@@ -639,18 +639,6 @@
             background: var(--bg-darker);
         }
 
-        /* Projects Section */
-        #projects .row {
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-        
-        #projects .col-lg-4,
-        #projects .col-md-6 {
-            padding: 0 15px;
-            margin-bottom: 30px;
-        }
-
         .project-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -917,7 +905,6 @@
             bottom: 30px;
             right: 30px;
             z-index: 9999;
-            display: none;
         }
 
         .button-to-Top a {
@@ -1555,7 +1542,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <img alt="Lyrics for YouTube Extension" src="img/addonLyricsForYoutube.jpg" loading="lazy">
                         <div class="project-content">
@@ -1577,7 +1564,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-card">
                         <img alt="GuiaUFS Mobile App" src="img/guiaufsAbout.jpg" loading="lazy">
                         <div class="project-content">
@@ -1599,7 +1586,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <img alt="Chat API" src="img/api.png" loading="lazy">
                         <div class="project-content">
@@ -1618,7 +1605,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="250">
                     <div class="project-card">
                         <img alt="React Native Dynamic TextInput" src="https://raw.githubusercontent.com/Hermanyo/react-native-dynamic-textinput/main/dynamic-textInput.gif" loading="lazy">
                         <div class="project-content">
@@ -1640,7 +1627,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <img alt="WoW Addon" src="img/developer.jpg" loading="lazy">
                         <div class="project-content">
@@ -1659,7 +1646,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="350">
                     <div class="project-card">
                         <img alt="More Projects" src="img/codeWallpaper.jpg" loading="lazy">
                         <div class="project-content">
@@ -1711,7 +1698,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <div role="navigation" id="topTopButton" class="button-to-Top">
+    <div role="navigation" id="topTopButton" class="button-to-Top" style="display: none;">
         <a data-title="goToTop" href="javascript:void(0)">
             <i class="fas fa-chevron-up"></i>
         </a>
