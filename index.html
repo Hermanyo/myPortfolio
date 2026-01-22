@@ -944,9 +944,9 @@
 
         /* Responsive - Mobile */
         @media (max-width: 768px) {
-            /* Fix horizontal scroll on mobile only */
-            html, body {
-                overflow-x: hidden;
+            /* Prevent horizontal scroll from AOS animations */
+            body {
+                overflow-x: clip;
             }
             
             .header-section {
@@ -1192,13 +1192,13 @@
             
             .button-to-Top {
                 bottom: 20px;
-                right: 10px;
+                right: 15px;
             }
             
             .button-to-Top a {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
             }
         }
         
