@@ -1,187 +1,1829 @@
-<html class="gr__">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title> Hermanyo H. - Portfolio</title>
+    <title>Hermanyo H. - FullStack Developer | Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="keywords" content="unica, creative, html">
+    <meta name="description" content="Hermanyo H. - FullStack Developer with 8+ years of experience specializing in React Native, JavaScript, TypeScript, Node.js, React, Angular, and mobile development. Based in Brazil.">
+    <meta name="keywords" content="Hermanyo, developer, fullstack, javascript, typescript, react, react native, nodejs, portfolio, mobile, angular, firebase, brazil, software engineer">
+    <meta name="author" content="Hermanyo H.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#9932cc">
+    <link rel="canonical" href="https://hermanyo.github.io/myPortfolio/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hermanyo.github.io/myPortfolio/">
+    <meta property="og:title" content="Hermanyo H. - FullStack Developer | Portfolio">
+    <meta property="og:description" content="FullStack Developer with 8+ years of experience building innovative mobile & web solutions. Specializing in React Native, React, Angular, and Node.js.">
+    <meta property="og:image" content="https://hermanyo.github.io/myPortfolio/img/myProfilePhoto2.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
+    <meta property="og:locale:alternate" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hermanyo.github.io/myPortfolio/">
+    <meta name="twitter:title" content="Hermanyo H. - FullStack Developer">
+    <meta name="twitter:description" content="FullStack Developer with 8+ years of experience building innovative mobile & web solutions.">
+    <meta name="twitter:image" content="https://hermanyo.github.io/myPortfolio/img/myProfilePhoto2.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hermanyo H.",
+        "jobTitle": "FullStack Developer",
+        "url": "https://hermanyo.github.io/myPortfolio/",
+        "sameAs": [
+            "https://github.com/Hermanyo",
+            "https://www.linkedin.com/in/hermanyo-h-775552144/",
+            "https://linktr.ee/hermanyo_h"
+        ],
+        "knowsAbout": ["React Native", "JavaScript", "TypeScript", "Node.js", "React", "Angular", "Firebase"],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidade Federal de Sergipe"
+        }
+    }
+    </script>
     <link rel="stylesheet" href="css/styles.pure.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --primary-color: #9932cc;
+            --secondary-color: #7b2cbf;
+            --accent-color: #c77dff;
+            --bg-dark: #191919;
+            --bg-darker: #121212;
+            --bg-card: #1e1e1e;
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: rgba(153, 50, 204, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 30, 30, 0.95);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(153, 50, 204, 0.15);
+        }
+
+        .lang-btn i:first-child {
+            color: var(--primary-color);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 140px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .lang-option:hover {
+            background: rgba(153, 50, 204, 0.15);
+        }
+
+        .lang-option.active {
+            background: rgba(153, 50, 204, 0.25);
+            color: var(--accent-color);
+        }
+
+        .lang-option .flag {
+            font-size: 18px;
+        }
+
+        /* Header Navigation */
+        .header-section {
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .main-menu ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .main-menu ul li span {
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .main-menu ul li span:hover,
+        .main-menu ul li.active span {
+            color: var(--primary-color);
+        }
+
+        .main-menu ul li.current span {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .main-menu ul li.current span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            display: inline-block;
+            min-height: 1.5em;
+            border-right: 2px solid var(--primary-color);
+            padding-right: 5px;
+            white-space: nowrap;
+        }
+
+        .typing-text.typing-complete {
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color) }
+        }
+        
+        /* AOS custom enhancements */
+        [data-aos] {
+            pointer-events: none;
+        }
+        [data-aos].aos-animate {
+            pointer-events: auto;
+        }
+
+        /* Download CV Button - same style as btn-outline */
+        .download-cv-btn,
+        .download-cv-btn:link,
+        .download-cv-btn:visited {
+            background: transparent !important;
+            border: 2px solid var(--primary-color) !important;
+            color: #ffffff !important;
+            padding: 12px 28px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            border-radius: 30px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            text-transform: none !important;
+        }
+
+        .download-cv-btn:hover,
+        .download-cv-btn:active {
+            background: var(--primary-color) !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        .download-cv-btn i,
+        .download-cv-btn span {
+            color: #ffffff !important;
+            text-transform: none !important;
+        }
+
+        /* Fade animations for elements without AOS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(153, 50, 204, 0.15);
+            border: 2px solid var(--primary-color);
+            color: var(--text-light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(153, 50, 204, 0.35);
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        /* Section Spacing */
+        .spad {
+            padding: 80px 0;
+        }
+
+        /* Section Title */
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            color: var(--text-light);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-us-section {
+            background: var(--bg-dark);
+            padding-top: 100px;
+        }
+
+        .as-pic img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .as-text {
+            padding-left: 30px;
+        }
+
+        .as-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .as-text p strong {
+            color: var(--primary-color);
+        }
+
+        /* Experience Section */
+        .experience-section {
+            background: var(--bg-darker);
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 35px;
+            padding-left: 10px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-darker);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+
+        .timeline-item h4 {
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-item .company {
+            color: var(--primary-color);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .company i {
+            margin-right: 8px;
+        }
+
+        .timeline-item .date {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item .date i {
+            margin-right: 6px;
+        }
+
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(153, 50, 204, 0.12);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(153, 50, 204, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Education & Certifications Section */
+        .education-section {
+            background: var(--bg-dark);
+            padding: 80px 0;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-card h4 {
+            color: var(--text-light);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .education-card h4 i {
+            color: var(--primary-color);
+        }
+
+        .education-card .institution {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .education-card .period {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .cert-card i {
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        .cert-card span {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cert-issuer {
+            color: var(--text-muted);
+            display: block;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        /* Achievements */
+        .achievements {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .achievement-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(153, 50, 204, 0.12);
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .achievement-badge i {
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+
+        .achievement-badge span {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Projects */
+        .services-section {
+            background: var(--bg-darker);
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(153, 50, 204, 0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-content h4 {
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag {
+            background: rgba(153, 50, 204, 0.15);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Project Buttons */
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .project-btn i {
+            font-size: 16px;
+        }
+        
+        .project-btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+        }
+        
+        .project-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(153, 50, 204, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .project-btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--primary-color);
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 14px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(153, 50, 204, 0.4);
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--text-light);
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        /* Hero Text */
+        .hs-text .role-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .hs-text h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .hs-text .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hs-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* About Highlights */
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .highlight-item i {
+            color: var(--primary-color);
+            font-size: 16px;
+            width: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-darker);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .footer .social-links {
+            justify-content: center;
+        }
+
+        /* Back to Top */
+        .button-to-Top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .button-to-Top a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            color: var(--text-light);
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(153, 50, 204, 0.4);
+        }
+
+        .button-to-Top a:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        /* Responsive - Tablet */
+        @media (max-width: 991px) {
+            .as-text {
+                padding-left: 0;
+                padding-top: 30px;
+            }
+
+            .as-pic img {
+                max-width: 100%;
+            }
+            
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 10px 0;
+            }
+            
+            .main-menu ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px 15px;
+                padding: 0 10px;
+            }
+
+            .main-menu ul li span {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+            
+            .hero-section {
+                padding: 80px 0 50px;
+                min-height: auto;
+            }
+            
+            .hs-text h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .hs-text .subtitle {
+                font-size: 1rem;
+            }
+            
+            .hs-text p {
+                font-size: 14px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+            
+            .cta-buttons a,
+            .primary-btn,
+            .btn-outline,
+            .download-cv-btn {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                padding: 14px 20px !important;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                padding: 15px 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+            
+            .stat-label {
+                font-size: 13px;
+            }
+            
+            /* About Section Mobile */
+            .about-us-section .row {
+                flex-direction: column;
+            }
+            
+            .as-pic {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .as-pic img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* Skills Grid Mobile */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .skill-category {
+                padding: 20px;
+            }
+            
+            .skill-category h4 {
+                font-size: 1rem;
+            }
+            
+            .skill-tags {
+                gap: 8px;
+            }
+            
+            .skill-tag {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+            
+            /* Timeline Mobile */
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .timeline-item h4 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-item p {
+                font-size: 13px;
+            }
+
+            .timeline-item::before {
+                left: -20px;
+                width: 10px;
+                height: 10px;
+            }
+            
+            /* Education Mobile */
+            .education-card {
+                padding: 25px 20px;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .cert-card {
+                padding: 15px;
+                font-size: 13px;
+            }
+            
+            /* Projects Mobile */
+            .project-card {
+                margin-bottom: 20px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .project-card img {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                object-fit: cover;
+            }
+            
+            #projects .row {
+                justify-content: center;
+            }
+            
+            #projects .col-lg-4,
+            #projects .col-md-6 {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .project-content {
+                padding: 20px;
+            }
+            
+            .project-content h4 {
+                font-size: 1.1rem;
+            }
+            
+            .project-content p {
+                font-size: 13px;
+            }
+            
+            .project-tags {
+                gap: 6px;
+            }
+            
+            .project-tag {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+            
+            /* Project Buttons Mobile */
+            .project-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .project-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 16px;
+            }
+            
+            /* Footer Mobile */
+            .footer {
+                padding: 40px 0 25px;
+            }
+            
+            .footer p {
+                font-size: 12px;
+            }
+
+            .language-selector {
+                top: auto;
+                bottom: 80px;
+                right: 15px;
+            }
+            
+            .language-selector select {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .button-to-Top {
+                bottom: 20px;
+                right: 15px;
+            }
+            
+            .button-to-Top a {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+        
+        /* Responsive - Small Mobile */
+        @media (max-width: 480px) {
+            .hs-text h2 {
+                font-size: 1.7rem;
+            }
+            
+            .role-badge {
+                font-size: 11px;
+                padding: 6px 15px;
+            }
+            
+            .main-menu ul li span {
+                font-size: 11px;
+            }
+            
+            .as-pic img {
+                max-width: 200px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-item {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
-<body data-gr-c-s-loaded="true">
+<body>
     <header class="header-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="main-menu mobile-menu">
                         <ul>
-                            <li class="active"><span id="homeButton">Home</span></li>
-                            <li><span id="aboutmeButton">About Me</span></li>
-                            <li><span id="contactButton">Contact Me</span></li>
+                            <li class="active"><span id="homeButton" data-i18n="nav.home">Home</span></li>
+                            <li><span id="aboutmeButton" data-i18n="nav.about">About</span></li>
+                            <li><span id="experienceButton" data-i18n="nav.experience">Experience</span></li>
+                            <li><span id="skillsButton" data-i18n="nav.skills">Skills</span></li>
+                            <li><span id="educationButton" data-i18n="nav.education">Education</span></li>
+                            <li><span id="projectsButton" data-i18n="nav.projects">Projects</span></li>
+                            <li><span id="contactButton" data-i18n="nav.contact">Contact</span></li>
                         </ul>
-                    </div>
-                    <div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <section class="hero-section set-bg"
-        style="background: rgb(25, 25, 25) url(&quot;img/codeWallpaper2.jpg&quot;) repeat scroll 19% 0%;">
+
+    <!-- Hero Section -->
+    <section class="hero-section set-bg" style="background: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.92)), url('img/codeWallpaper2.jpg') center/cover no-repeat fixed;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hs-text">
+                        <span class="role-badge" data-aos="fade-down" data-aos-delay="100" data-i18n="hero.role">FullStack Developer</span>
+                        <h2 data-aos="fade-right" data-aos-delay="200">Hermanyo H.</h2>
+                        <p class="subtitle" data-aos="fade-right" data-aos-delay="300">
+                            <span class="typing-text" id="typingText"></span>
+                        </p>
+                        <p data-aos="fade-up" data-aos-delay="400" data-i18n="hero.quote">
+                            "Talk is cheap. Show me the code." ― Linus Torvalds
+                        </p>
+                        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+                            <a id="readmoreButton" class="primary-btn" data-i18n="hero.viewWork">View My Work</a>
+                            <a href="./contact.html" class="btn-outline" data-i18n="hero.getInTouch">Get In Touch</a>
+                            <a href="./resume_Hermanyo_h.pdf" target="_blank" download class="download-cv-btn"><i class="fas fa-download"></i> <span data-i18n="hero.downloadCV">Download CV</span></a>
+                        </div>
+                        <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                            <a href="https://github.com/Hermanyo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/hermanyo-h-775552144/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:hermanyoh.solutions@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://linktr.ee/hermanyo_h" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-us-section spad" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="hs-text">
-                        <span>Developer</span>
-                        <h2>Hermanyo H.</h2> 
-                        <div>
-                            <p>
-                                “Talk is cheap. Show me the code.” ― Linus Torvalds
-                            </p>
-                        </div> 
-                        <a id="readmoreButton" class="primary-btn">Read More</a>
+                    <div class="as-pic" data-aos="fade-right" data-aos-duration="1000">
+                        <img alt="Hermanyo H. - FullStack Developer" src="img/myProfilePhoto2.jpg" loading="lazy">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="about-us-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="as-pic">
-                        <img alt="" src="img/myProfilePhoto2.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="as-text">
-                        <div class="section-title">
-
-                            <h2>About Me</h2>
+                        <div class="section-title" data-aos="fade-up">
+                            <h2 data-i18n="about.title">About Me</h2>
                         </div>
-                        <p class="f-para">I am a Computer Scientist at UFS, I am crazy about technology and I
-                            develop
-                            new projects in different languages ​​and technologies.</p>
-
-                        <a class="primary-btn" href="./contact.html">Contact Me</a>
+                        <p data-i18n="about.description1" data-i18n-html>
+                            I'm a passionate <strong>FullStack Developer</strong> with over 8 years of experience building mobile and web applications. I specialize in React Native, React, Angular, and Node.js.
+                        </p>
+                        <p data-i18n="about.description2" data-i18n-html>
+                            With a degree in <strong>Computer Science</strong> from the Federal University of Sergipe (UFS), I bring a strong foundation in software engineering and a passion for creating scalable, user-friendly applications.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span data-i18n="about.degree">B.Sc. Computer Science - UFS</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-code"></i>
+                                <span data-i18n="about.repos">54+ Repositories on GitHub</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span data-i18n="about.experience">8+ Years Professional Experience</span>
+                            </div>
+                        </div>
+                        <div class="achievements">
+                            <div class="achievement-badge">
+                                <i class="fas fa-code-pull-request"></i>
+                                <span>Pull Shark x2</span>
+                            </div>
+                            <div class="achievement-badge">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Arctic Code Vault Contributor</span>
+                            </div>
+                        </div>
+                        <div class="cta-buttons">
+                            <a class="primary-btn" href="./contact.html" data-i18n="about.contactMe">Contact Me</a>
+                            <a class="btn-outline" href="https://github.com/Hermanyo" target="_blank">
+                                <i class="fab fa-github"></i> <span data-i18n="about.viewGithub">View GitHub</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="services-section spad">
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Skills</h2>
+                    <div class="section-title" style="text-align: center;">
+                        <h2 data-i18n="experience.title">Professional Experience</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <p>
-                        CSS/HTML
-                    </p>
-                    <p>
-                        React/React-Native</p>
-                    <p>
-                        C/C++
-                    </p>
-                </div>
-                <div class="col-lg-4">
-                    <p>JavaScript</p>
-                    <p>
-                        Git/GitHub</p>
-                    <p>
-                        Java/C#
-                    </p>
-                </div>
-                <div class="col-lg-4">
-                    <p>English: Intermediate</p>
-                    <p>Portuguese: Native</p>
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4 data-i18n="experience.senior.title">Senior Digital Solutions Consultant</h4>
+                            <div class="company"><i class="fas fa-building"></i><span data-i18n="experience.senior.company">Capgemini Brasil S.A.</span></div>
+                            <div class="date"><i class="far fa-calendar-alt"></i> <span data-i18n="experience.senior.date">April 2022 - January 2026 (3 years 10 months)</span></div>
+                            <p data-i18n="experience.senior.description">
+                                Development of React Native mobile applications, performance improvements, refactoring and maintenance of features for Banco do Brasil. Daily participation in agile rooms (scrum) and git code versioning.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 data-i18n="experience.mid.title">Mid-Level Digital Solutions Consultant</h4>
+                            <div class="company"><i class="fas fa-building"></i><span data-i18n="experience.mid.company">Capgemini Brasil S.A.</span></div>
+                            <div class="date"><i class="far fa-calendar-alt"></i> <span data-i18n="experience.mid.date">July 2021 - April 2022 (10 months)</span></div>
+                            <p data-i18n="experience.mid.description">
+                                Development of web and mobile applications using Angular and React Native as frameworks, applying performance improvements, refactoring and maintenance. Daily participation in agile rooms (scrum) and git versioning.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 data-i18n="experience.fullstack.title">Full Stack Developer</h4>
+                            <div class="company"><i class="fas fa-rocket"></i><span data-i18n="experience.fullstack.company">Brainy Resolution</span></div>
+                            <div class="date"><i class="far fa-calendar-alt"></i> <span data-i18n="experience.fullstack.date">April 2020 - August 2021 (1 year 5 months)</span></div>
+                            <p data-i18n="experience.fullstack.description">
+                                Development of a mobile and web application for community management using React Native, Node and Firebase. Integration with Cloud Functions, Firestore, Storage, Authentication, Cloud Messaging, Dynamic Links, Hosting, Crashlytics and Analytics.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 data-i18n="experience.systems.title">Systems Developer</h4>
+                            <div class="company"><i class="fas fa-laptop-code"></i><span data-i18n="experience.systems.company">Idealle Sistemas</span></div>
+                            <div class="date"><i class="far fa-calendar-alt"></i> <span data-i18n="experience.systems.date">June 2019 - April 2020 (11 months)</span></div>
+                            <p data-i18n="experience.systems.description">
+                                Development of inventory management systems and integration with delivery platforms (iFood, 99 Food) using C#, Java, Asp.net, JavaScript, HTML, CSS, MySQL and SQL. Also developed a React Native app for restaurant table control on GPOS 700 Gertec.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="services-section spad">
+
+    <!-- Skills Section -->
+    <section class="services-section spad" id="skills">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
+                    <div class="section-title" style="text-align: center;" data-aos="fade-up">
+                        <h2 data-i18n="skills.title">Technical Skills</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+                    <h4><i class="fas fa-mobile-alt"></i> <span data-i18n="skills.mobile">Mobile Development</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Android</span>
+                        <span class="skill-tag">iOS</span>
+                        <span class="skill-tag">Expo</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+                    <h4><i class="fas fa-code"></i> <span data-i18n="skills.frontend">Frontend Development</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
+                    <h4><i class="fas fa-server"></i> <span data-i18n="skills.backend">Backend Development</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">ASP.NET</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+                    <h4><i class="fas fa-database"></i> <span data-i18n="skills.databases">Databases & Cloud</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Firestore</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+                    <h4><i class="fas fa-tools"></i> <span data-i18n="skills.tools">Tools & DevOps</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Scrum</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
+                    <h4><i class="fas fa-globe"></i> <span data-i18n="skills.languages">Languages</span></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-i18n="skills.portuguese">Portuguese (Native)</span>
+                        <span class="skill-tag" data-i18n="skills.english">English (Intermediate)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <h2>My personal projects</h2>
+    <!-- Education & Certifications Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title" style="text-align: center;" data-aos="fade-up">
+                        <h2 data-i18n="education.title">Education & Certifications</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4><i class="fas fa-graduation-cap"></i> <span data-i18n="education.degree">Bachelor's in Computer Science</span></h4>
+                        <div class="institution" data-i18n="education.university">Universidade Federal de Sergipe (UFS)</div>
+                        <div class="period" data-i18n="education.location">Brazil</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-lg-12">
+                    <h3 style="text-align: center; color: var(--text-light); font-size: 1.3rem; margin-bottom: 25px;">
+                        <i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 10px;"></i><span data-i18n="education.certifications">Certifications</span>
+                    </h3>
+                </div>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <i class="fab fa-js-square"></i>
+                    <span data-i18n="education.cert.jsAlgo">JavaScript Algorithms and Data Structures</span>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-meta"></i>
+                    <span><span data-i18n="education.cert.jsProgram">Programming with JavaScript</span><small class="cert-issuer" data-i18n="education.issuedBy">Issued by Meta</small></span>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span data-i18n="education.cert.mobile">Introduction to Mobile Development</span>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-meta"></i>
+                    <span><span data-i18n="education.cert.reactNative">React Native</span><small class="cert-issuer" data-i18n="education.issuedBy">Issued by Meta</small></span>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-language"></i>
+                    <span data-i18n="education.cert.english">English Certificate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="services-section spad" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title" style="text-align: center;" data-aos="fade-up">
+                        <h2 data-i18n="projects.title">Featured Projects</h2>
+                        <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="projects.subtitle">A selection of personal and open-source projects</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <a class="col-lg-4 col-md-6"
-                    href="https://addons.mozilla.org/pt-BR/firefox/addon/queue-and-lyrics-for-youtube/" target="_blank">
-                    <div class="service-item">
-                        <img alt="" src="img/addonLyricsForYoutube.jpg">
-                        <h4>Lyrics for Youtube</h4>
-                        <p>A extension to show videos lyrics for YouTube. Plataforms: Mozilla
-                            Firefox (Published on AddOns Mozilla ), Chrome/Chromium, Opera, Internet Edge.
-                        </p>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <img alt="Lyrics for YouTube Extension" src="img/addonLyricsForYoutube.jpg" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.lyrics.title">Lyrics for YouTube</h4>
+                            <p data-i18n="projects.lyrics.description">A browser extension to display video lyrics on YouTube. Published on Mozilla Add-ons and compatible with Firefox, Chrome, Opera, and Edge.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Browser Extension</span>
+                                <span class="project-tag">API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://addons.mozilla.org/pt-BR/firefox/addon/queue-and-lyrics-for-youtube/" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> <span data-i18n="projects.btn.viewAddon">View Addon</span>
+                                </a>
+                                <a href="https://github.com/Hermanyo/youtube-extension" target="_blank" class="project-btn project-btn-secondary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewCode">View Code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a class="col-lg-4 col-md-6" target="_blank"
-                    href="https://play.google.com/store/apps/details?id=com.guiaufs">
-                    <div class="service-item">
-                        <img alt="" src="img/guiaufsAbout.jpg" height="120px">
-                        <h4>GuiaUFS</h4>
-                        <p>An application to help students/visitors to locating at the Federal University of Sergipe -
-                            UFS, Brazil.
-                        </p>
+                </div>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+                    <div class="project-card">
+                        <img alt="GuiaUFS Mobile App" src="img/guiaufsAbout.jpg" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.guiaufs.title">GuiaUFS</h4>
+                            <p data-i18n="projects.guiaufs.description">A mobile application to help students and visitors navigate the Federal University of Sergipe campus. Available on Google Play Store.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">Maps</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.guiaufs" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fab fa-google-play"></i> <span data-i18n="projects.btn.playStore">Play Store</span>
+                                </a>
+                                <a href="https://github.com/Hermanyo/GuiaUFS" target="_blank" class="project-btn project-btn-secondary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewCode">View Code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a class="col-lg-4 col-md-6" target="_blank" href="https://github.com/Hermanyo/Chat-API">
-                    <div class="service-item">
-                        <img alt="" src="img/api.png">
-                        <h4>ChatApi</h4>
-                        <p>A simple chatApi using Cloud Firestore, Express with Nodejs</p>
+                </div>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <img alt="Chat API" src="img/api.png" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.chatapi.title">Chat API</h4>
+                            <p data-i18n="projects.chatapi.description">A real-time chat API built with Cloud Firestore, Express.js and Node.js. Features message synchronization and user management.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Express</span>
+                                <span class="project-tag">Firebase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Hermanyo/Chat-API" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewOnGithub">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a class="col-lg-4 col-md-6" target="_blank"
-                    href="https://github.com/Hermanyo/react-native-dynamic-textinput">
-                    <div class="service-item">
-                        <img alt=""
-                            src="https://raw.githubusercontent.com/Hermanyo/react-native-dynamic-textinput/main/dynamic-textInput.gif">
-                        <h4>react-native-dynamic-textinput</h4>
-                        <p>A custom react-native textinput UI component library for React Native </p>
+                </div>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <img alt="React Native Dynamic TextInput" src="https://raw.githubusercontent.com/Hermanyo/react-native-dynamic-textinput/main/dynamic-textInput.gif" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.textinput.title">react-native-dynamic-textinput</h4>
+                            <p data-i18n="projects.textinput.description">An open-source React Native UI component library for creating dynamic, animated text inputs. Published on npm.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">npm Package</span>
+                                <span class="project-tag">Open Source</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.npmjs.com/package/react-native-dynamic-textinput" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fab fa-npm"></i> <span data-i18n="projects.btn.viewOnNpm">View on npm</span>
+                                </a>
+                                <a href="https://github.com/Hermanyo/react-native-dynamic-textinput" target="_blank" class="project-btn project-btn-secondary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewCode">View Code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+                    <div class="project-card">
+                        <img alt="WoW Addon" src="img/developer.jpg" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.wow.title">ShowPvPExp Addon</h4>
+                            <p data-i18n="projects.wow.description">A World of Warcraft addon that displays player PvP current and highest rating by modality without opening the inspect window.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Lua</span>
+                                <span class="project-tag">WoW Addon</span>
+                                <span class="project-tag">Gaming</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Hermanyo/ShowPvPExp_Addon" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewOnGithub">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+                    <div class="project-card">
+                        <img alt="More Projects" src="img/codeWallpaper.jpg" loading="lazy">
+                        <div class="project-content">
+                            <h4 data-i18n="projects.more.title">More on GitHub</h4>
+                            <p data-i18n="projects.more.description">Explore my complete collection of 54+ repositories including various projects, experiments, and contributions to open source.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">54+ Repos</span>
+                                <span class="project-tag">Open Source</span>
+                                <span class="project-tag">Various</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Hermanyo" target="_blank" class="project-btn project-btn-primary">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.btn.viewAllRepos">View All Repos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <span class="stat-number">54+</span>
+                    <span class="stat-label" data-i18n="stats.repositories">Repositories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label" data-i18n="stats.experience">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label" data-i18n="stats.companies">Companies</span>
+                </div>
             </div>
         </div>
     </section>
-    <div role="navigation" id="topTopButton" class="button-to-Top" style="display: block;">
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer.rights">© 2026 Hermanyo H. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/Hermanyo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hermanyo-h-775552144/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:hermanyoh.solutions@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linktr.ee/hermanyo_h" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+                <a href="https://www.instagram.com/hermanyo_h/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div role="navigation" id="topTopButton" class="button-to-Top" style="display: none;">
         <a data-title="goToTop" href="javascript:void(0)">
-            <i class="material-icons md-light pmd-sm fa fa-chevron-up"></i>
+            <i class="fas fa-chevron-up"></i>
         </a>
     </div>
+
+    <!-- i18n Script -->
+    <script src="js/i18n.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Typing Animation
+        const typingTexts = {
+            'en': 'Building innovative mobile & web solutions',
+            'pt-BR': 'Criando soluções inovadoras mobile & web',
+            'es': 'Creando soluciones innovadoras móviles y web'
+        };
+        
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.textContent = '';
+            element.style.borderRight = '2px solid var(--primary-color)';
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Keep cursor blinking after typing completes
+                    element.classList.add('typing-complete');
+                }
+            }
+            type();
+        }
+        
+        // Start typing animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingElement = document.getElementById('typingText');
+            if (typingElement) {
+                const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                const text = typingTexts[currentLang] || typingTexts['en'];
+                setTimeout(() => typeWriter(typingElement, text), 500);
+            }
+        });
+
+        // Scroll Spy - Active Menu Indicator
+        const sections = document.querySelectorAll('section[id]');
+        const menuItems = {
+            'about': document.getElementById('aboutmeButton')?.parentElement,
+            'experience': document.getElementById('experienceButton')?.parentElement,
+            'skills': document.getElementById('skillsButton')?.parentElement,
+            'education': document.getElementById('educationButton')?.parentElement,
+            'projects': document.getElementById('projectsButton')?.parentElement
+        };
+
+        function updateActiveMenu() {
+            let current = '';
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Remove current class from all menu items
+            Object.values(menuItems).forEach(item => {
+                if (item) item.classList.remove('current');
+            });
+
+            // Add current class to active menu item
+            if (current && menuItems[current]) {
+                menuItems[current].classList.add('current');
+            }
+        }
+
+        window.addEventListener('scroll', updateActiveMenu);
+        
+        // Back to top and scroll functionality
         window.onscroll = () => {
-            if (window.scrollY >= 739)
+            if (window.scrollY >= 300)
                 document.querySelector("#topTopButton").style.display = "block";
             else
                 document.querySelector("#topTopButton").style.display = "none";
+            
+            // Also call updateActiveMenu
+            updateActiveMenu();
         }
-        document.querySelector("#topTopButton").addEventListener("click", event => {
-            document.querySelector("html").scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-        document.querySelector("#homeButton").addEventListener("click", event => {
-            document.querySelector("html").scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-        document.querySelector("#aboutmeButton").addEventListener("click", event => {
-            document.querySelector(".about-us-section").scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-        document.querySelector("#readmoreButton").addEventListener("click", event => {
-            document.querySelector(".about-us-section").scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-        document.querySelector("#contactButton").addEventListener("click", event => {
+
+        document.querySelector("#topTopButton").addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        document.querySelector("#homeButton").addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        document.querySelector("#aboutmeButton").addEventListener("click", () => {
+            document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#experienceButton").addEventListener("click", () => {
+            document.querySelector("#experience").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#skillsButton").addEventListener("click", () => {
+            document.querySelector("#skills").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#educationButton").addEventListener("click", () => {
+            document.querySelector("#education").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#projectsButton").addEventListener("click", () => {
+            document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#readmoreButton").addEventListener("click", () => {
+            document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.querySelector("#contactButton").addEventListener("click", () => {
             window.open("./contact.html", "_parent");
-        })
+        });
     </script>
 </body>
 
