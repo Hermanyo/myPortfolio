@@ -945,8 +945,8 @@
         /* Responsive - Mobile */
         @media (max-width: 768px) {
             /* Fix horizontal scroll on mobile only */
-            html {
-                overflow-x: clip;
+            html, body {
+                overflow-x: hidden;
             }
             
             .header-section {
@@ -1192,14 +1192,12 @@
             
             .button-to-Top {
                 bottom: 20px;
-                right: 20px;
-                position: fixed;
-                z-index: 9999;
+                right: 10px;
             }
             
             .button-to-Top a {
-                width: 42px;
-                height: 42px;
+                width: 40px;
+                height: 40px;
                 font-size: 16px;
             }
         }
