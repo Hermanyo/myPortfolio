@@ -72,8 +72,7 @@
         }
 
         html { 
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            scroll-behavior: smooth; 
         }
 
         body {
@@ -81,8 +80,6 @@
             color: var(--text-light);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
-            max-width: 100vw;
         }
 
         /* Language Selector */
@@ -244,12 +241,6 @@
         }
         [data-aos].aos-animate {
             pointer-events: auto;
-        }
-        
-        /* Prevent horizontal scroll */
-        section, .container, .row {
-            max-width: 100%;
-            overflow-x: hidden;
         }
 
         /* Download CV Button - same style as btn-outline */
@@ -904,7 +895,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 9999;
+            z-index: 999;
         }
 
         .button-to-Top a {
@@ -1117,23 +1108,11 @@
             }
             
             /* Projects Mobile */
-            #projects .row {
-                margin-left: -10px;
-                margin-right: -10px;
-            }
-            
-            #projects .col-lg-4,
-            #projects .col-md-6 {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 0 10px;
-                margin-bottom: 16px;
-            }
-            
             .project-card {
-                margin: 0 auto;
-                max-width: 100%;
-                width: 100%;
+                margin-bottom: 20px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .project-card img {
@@ -1141,6 +1120,16 @@
                 height: auto;
                 max-height: 200px;
                 object-fit: cover;
+            }
+            
+            #projects .row {
+                justify-content: center;
+            }
+            
+            #projects .col-lg-4,
+            #projects .col-md-6 {
+                display: flex;
+                justify-content: center;
             }
             
             .project-content {
@@ -1542,7 +1531,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <img alt="Lyrics for YouTube Extension" src="img/addonLyricsForYoutube.jpg" loading="lazy">
                         <div class="project-content">
@@ -1564,7 +1553,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
                     <div class="project-card">
                         <img alt="GuiaUFS Mobile App" src="img/guiaufsAbout.jpg" loading="lazy">
                         <div class="project-content">
@@ -1586,7 +1575,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <img alt="Chat API" src="img/api.png" loading="lazy">
                         <div class="project-content">
@@ -1605,7 +1594,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <img alt="React Native Dynamic TextInput" src="https://raw.githubusercontent.com/Hermanyo/react-native-dynamic-textinput/main/dynamic-textInput.gif" loading="lazy">
                         <div class="project-content">
@@ -1627,7 +1616,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
                     <div class="project-card">
                         <img alt="WoW Addon" src="img/developer.jpg" loading="lazy">
                         <div class="project-content">
@@ -1646,7 +1635,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="350">
+                <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
                     <div class="project-card">
                         <img alt="More Projects" src="img/codeWallpaper.jpg" loading="lazy">
                         <div class="project-content">
