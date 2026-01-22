@@ -944,6 +944,11 @@
 
         /* Responsive - Mobile */
         @media (max-width: 768px) {
+            /* Fix horizontal scroll on mobile only */
+            html, body {
+                overflow-x: hidden;
+            }
+            
             .header-section {
                 padding: 10px 0;
             }
