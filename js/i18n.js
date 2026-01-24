@@ -21,7 +21,7 @@ const translations = {
     // About Section
     "about.title": "About Me",
     "about.description1":
-      "I'm a passionate <strong>FullStack Developer</strong> with over 8 years of experience building mobile and web applications. I specialize in React Native, React, Angular, and Node.js.",
+      "I'm a passionate <strong>FullStack Developer</strong> with over 8 years of experience building mobile and web applications. I specialize in React Native and React.",
     "about.description2":
       "With a degree in <strong>Computer Science</strong> from the Federal University of Sergipe (UFS), I bring a strong foundation in software engineering and a passion for creating scalable, user-friendly applications.",
     "about.degree": "B.Sc. Computer Science - UFS",
@@ -149,7 +149,7 @@ const translations = {
     // About Section
     "about.title": "Sobre Mim",
     "about.description1":
-      "Sou um <strong>Desenvolvedor FullStack</strong> apaixonado, com mais de 8 anos de experiência construindo aplicações mobile e web. Especializado em React Native, React, Angular e Node.js.",
+      "Sou um <strong>Desenvolvedor FullStack</strong> apaixonado, com mais de 8 anos de experiência construindo aplicações mobile e web. Especializado em React Native e React.",
     "about.description2":
       "Com graduação em <strong>Ciência da Computação</strong> pela Universidade Federal de Sergipe (UFS), trago uma base sólida em engenharia de software e paixão por criar aplicações escaláveis e fáceis de usar.",
     "about.degree": "Bacharel em Ciência da Computação - UFS",
@@ -277,7 +277,7 @@ const translations = {
     // About Section
     "about.title": "Sobre Mí",
     "about.description1":
-      "Soy un <strong>Desarrollador FullStack</strong> apasionado con más de 8 años de experiencia construyendo aplicaciones móviles y web. Me especializo en React Native, React, Angular y Node.js.",
+      "Soy un <strong>Desarrollador FullStack</strong> apasionado con más de 8 años de experiencia construyendo aplicaciones móviles y web. Me especializo en React Native y React.",
     "about.description2":
       "Con un título en <strong>Ciencias de la Computación</strong> de la Universidad Federal de Sergipe (UFS), aporto una base sólida en ingeniería de software y pasión por crear aplicaciones escalables y fáciles de usar.",
     "about.degree": "Licenciatura en Ciencias de la Computación - UFS",
