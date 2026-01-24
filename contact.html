@@ -340,6 +340,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            html,
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
             .section-title h2 {
                 font-size: 2rem;
             }
@@ -354,8 +359,16 @@
 
             .language-selector {
                 top: auto;
-                bottom: 20px;
-                right: 20px;
+                bottom: calc(20px + env(safe-area-inset-bottom));
+                right: calc(12px + env(safe-area-inset-right));
+            }
+
+            .language-selector .lang-dropdown {
+                top: auto;
+                bottom: 100%;
+                margin-top: 0;
+                margin-bottom: 8px;
+                transform: translateY(10px);
             }
         }
     </style>
